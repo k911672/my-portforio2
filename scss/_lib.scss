@@ -1,0 +1,93 @@
+/////////////////
+//    変数     //
+/////////////////
+$dil_gray:#E2ECE3;
+$gray:#CFCFC5;
+$den_gray:#AEAEA5;
+
+///////////////
+//// mixin ////
+///////////////
+@mixin pc {
+  @media screen and (min-width:1025px) {
+    @content;
+  }
+};
+
+@mixin tab {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+};
+
+@mixin sp {
+  @media screen and (max-width: 600px)  {
+    @content;
+  }
+};
+
+
+//////////////
+//// 共通 ////
+//////////////
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  background-color: $dil_gray;
+  font-family: serif;
+}
+
+.inner {
+  width: 85%;
+  height: 100%;
+  margin:0 auto;
+  background-color: white;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  overflow: hidden;
+}
+
+.inner_inner {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  @include tab {
+    width: 72%;
+  }  
+  @include sp {
+    width:88%
+  }  
+}
+
+.title {
+  color: $den_gray;
+  font-size: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 5.6rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include sp {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 4rem;
+  }  
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 30rem;
+    border-bottom: 1px solid  $gray;
+    margin: 0.5rem 0;
+    @include sp {
+      width: 24rem;
+    }  
+  }
+}

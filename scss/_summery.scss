@@ -1,0 +1,163 @@
+#summery {
+  width: 100%;
+  height: 702px;
+  margin-top: 80px;
+  @include tab {
+    height: 600px;
+  }  
+  @include sp {
+    margin-top: 40px;
+    height: 552px;
+  }
+}
+
+
+.summery_content {
+  display: flex;
+  justify-content: space-between;
+  @include sp {
+    flex-direction: column;
+    align-items: center;
+  }  
+}
+
+.summery_item {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include sp {
+    width: 72%;
+  }  
+}
+
+.summery_picture {
+  width: 100%;
+  margin-bottom: 8%;
+  img {
+    width:100%;  
+  }
+}
+
+
+.summery_text {
+  width: 47%;
+  line-height: 3rem;
+  font-size: 2rem;
+
+  @include tab {
+    width: 47%;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }  
+  @include sp {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    order: 1;
+    margin-top: 8%;
+    width:100%
+  }  
+}
+
+
+
+.summery_button {
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 4rem;
+  border: solid 1px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #000;
+    &:hover{
+      animation: font-change 0.8s both;
+    }
+  }
+  position: relative;
+  display: block;
+  overflow: hidden;
+  @include sp {
+    width: 48%;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1.4rem;
+  }
+}
+
+@keyframes font-change {
+  0% {
+    color: rgba(102,255,0,1);
+  }
+  50% {
+    color: rgba(102,255,0,0.2);
+  }
+  100% {
+    color: rgba(0,0,0,1);
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 400px;
+    height: 200px;
+  }
+}
+
+.btn-11 {
+  position: relative;
+  &:before, &:after {
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgba(102,255,0,0.7);
+    border-radius: 50%;
+  }
+  &:before {
+    left: -40px;
+    transform: translate(-50%, -50%);
+  }
+  &:after {
+    right: -40px;
+    transform: translate(50%, -50%);
+  }
+  &:hover {
+    &:before {
+      animation: criss-cross-left 0.8s both;
+      animation-direction: alternate;
+    }
+    &:after {
+      animation: criss-cross-right 0.8s both;
+      animation-direction: alternate;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+#access{
+  width: 100%;
+  height: 520px;
+  margin-top: 80px;
+  @include sp {
+    margin-top: 40px;
+    height: 280px;
+  }
+}
+
+.access_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  .table1 {
+    margin-top: 24px;
+    font-size: 2rem;
+    line-height:5rem;
+    width: 100%;
+    @include tab {
+      font-size: 1.6rem;
+      line-height:5rem;
+    }
+    @include sp {
+      font-size: 1rem;
+      line-height:3rem;
+      margin-top: 8px;
+    }
+  }
+}
+
+.access_table_title {
+  display: block;
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1rem;
+  @include sp {
+    font-size: 2rem;
+  }
+
+  &:after {
+    display: inline-block;
+    content: "";
+    width:8rem;
+    border-top: solid 1px rgba(black, 1.0);
+    @include sp {
+      width:6rem;
+    }
+  }
+}
+
+.access_text {
+  width: 45%;
+  @include sp {
+    width: 56%;
+  }
+}
+
+.access_item {
+  width: 45%;
+  height: 100%;
+  @include sp {
+    width: 40%;
+  }
+}
+
+.access_map {
+  width: 100%;
+  height: 256px;
+  @include tab {
+    width: 250px;
+    height: 250px;
+  }
+  @include sp {
+    width: 100%;
+    height: 152px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

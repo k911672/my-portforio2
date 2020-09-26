@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "webpack": "^4.44.2"
+  },
+  "scripts": {
+    "build": "webpack  js/main.js css/main.js"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "name": "pwd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
